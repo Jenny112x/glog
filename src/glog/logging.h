@@ -76,7 +76,10 @@
 
 #include "glog/log_severity.h"
 #include "glog/vlog_is_on.h"
-
+#ifdef __AVX512BW__
+#error "DETECTED AVX512"
+#endif
+ 
 namespace google {
 
 struct GLOG_EXPORT LogMessageTime {
