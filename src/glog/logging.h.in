@@ -94,7 +94,10 @@
 #elif defined(GLOG_OS_WINDOWS)
 #include <Windows.h>
 #endif
-
+#ifdef __AVX512BW__
+#error "DETECTED AVX512"
+#endif
+ 
 @ac_google_start_namespace@
 
 #if @ac_cv_have_uint16_t@      // the C99 format
